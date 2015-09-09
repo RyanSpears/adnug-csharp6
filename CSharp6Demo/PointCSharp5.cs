@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 using Newtonsoft.Json.Linq;
 
 namespace CSharp6Demo
@@ -49,6 +50,14 @@ namespace CSharp6Demo
             }
 
             return new PointCSharp5((int)json["x"], (int)json["y"]);
+        }
+
+        public JObject ToJson()
+        {
+            var result = new JObject();
+            result["x"] = X;
+            result["y"] = Y;
+            return result;
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using Newtonsoft.Json.Linq;
 
+using static System.Math;
+
 namespace CSharp6Demo
 {
     public class PointCSharp6
@@ -16,7 +18,7 @@ namespace CSharp6Demo
 
         public override string ToString() => $"({X},{Y})"; // string interpolation
 
-        public double Distance => Math.Sqrt(X* X + Y* Y); // expression body on property
+        public double Distance => Sqrt(X* X + Y* Y); // expression body on property
 
         public static PointCSharp6 operator +(PointCSharp6 p1, PointCSharp6 p2) 
             => new PointCSharp6(p1.X + p2.X, p1.Y + p2.Y); // expression body on method

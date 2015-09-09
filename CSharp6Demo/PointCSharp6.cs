@@ -28,9 +28,8 @@ namespace CSharp6Demo
 
         public static PointCSharp6 FromJson(JObject json)
         {
-            if (json == null ||
-                json["x"]?.Type != JTokenType.Integer || // null conditional operators
-                json["y"]?.Type != JTokenType.Integer)
+            if (json?["x"]?.Type != JTokenType.Integer && // null conditional operators
+                json?["y"]?.Type != JTokenType.Integer)
             {
                 throw new ArgumentException("The paramater is not shaped like a point", nameof(json)); // nameof expression
             }
